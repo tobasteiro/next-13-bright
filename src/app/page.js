@@ -1,110 +1,49 @@
-import React from 'react';
-import { Code } from 'bright';
+import React from "react";
+import { Code } from "bright";
+import CodeSnippet from "../components/CodeSnippet/CodeSnippet";
 
 function Home() {
-  const [
-    isFirstSnippetShown,
-    setIsFirstSnippetShown,
-  ] = React.useState(false);
-  const [
-    isSecondSnippetShown,
-    setIsSecondSnippetShown,
-  ] = React.useState(false);
-  const [
-    isThirdSnippetShown,
-    setIsThirdSnippetShown,
-  ] = React.useState(false);
-
   return (
     <main>
       <h1>Introduction to Python</h1>
       <h2>Variables and Basic Data Types</h2>
       <p>
-        Python is a high-level, interpreted
-        programming language. In Python, you don't
-        need to specify the data type of a
-        variable when you declare it. Python
-        automatically determines the data type
-        based on the value you assign.
+        Python is a high-level, interpreted programming language. In Python, you
+        don't need to specify the data type of a variable when you declare it.
+        Python automatically determines the data type based on the value you
+        assign.
       </p>
 
-      {isFirstSnippetShown ? (
-        <Code
-          className="code-snippet"
-          theme="dracula"
-          lang="py"
-        >
+      <CodeSnippet>
+        <Code className="code-snippet" theme="dracula" lang="py">
           {FIRST_SNIPPET}
         </Code>
-      ) : (
-        <div className="reveal">
-          <button
-            onClick={() =>
-              setIsFirstSnippetShown(true)
-            }
-          >
-            Reveal Content
-          </button>
-        </div>
-      )}
+      </CodeSnippet>
 
-      <h2>
-        Control Flow: Conditionals and Loops
-      </h2>
+      <h2>Control Flow: Conditionals and Loops</h2>
       <p>
-        Python has standard control flow
-        structures like if statements, for and
+        Python has standard control flow structures like if statements, for and
         while loops.
       </p>
 
-      {isSecondSnippetShown ? (
-        <Code
-          className="code-snippet"
-          theme="dracula"
-          lang="py"
-        >
+      <CodeSnippet>
+        <Code className="code-snippet" theme="dracula" lang="py">
           {SECOND_SNIPPET}
         </Code>
-      ) : (
-        <div className="reveal">
-          <button
-            onClick={() =>
-              setIsSecondSnippetShown(true)
-            }
-          >
-            Reveal Content
-          </button>
-        </div>
-      )}
+      </CodeSnippet>
 
       <h2>Functions and Basic Data Structures</h2>
 
       <p>
-        In Python, you can define your own
-        functions using the def keyword. Python
-        also has built-in data structures like
-        lists and dictionaries.
+        In Python, you can define your own functions using the def keyword.
+        Python also has built-in data structures like lists and dictionaries.
       </p>
 
-      {isThirdSnippetShown ? (
-        <Code
-          className="code-snippet"
-          theme="dracula"
-          lang="py"
-        >
+      <CodeSnippet>
+        <Code className="code-snippet" theme="dracula" lang="py">
           {THIRD_SNIPPET}
         </Code>
-      ) : (
-        <div className="reveal">
-          <button
-            onClick={() =>
-              setIsThirdSnippetShown(true)
-            }
-          >
-            Reveal Content
-          </button>
-        </div>
-      )}
+      </CodeSnippet>
     </main>
   );
 }
